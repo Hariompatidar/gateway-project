@@ -7,7 +7,7 @@ import Subscription from "./components/Subscription";
 
 function App() {
     return (
-        <div className="w-screen h-full flex flex-col items-center justify-center">
+        <div className="w-screen h-screen">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />

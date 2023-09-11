@@ -55,52 +55,67 @@ const Signup = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            required
-          />
+ <div className='w-screen h-screen flex items-center justify-center'>
+     <div className=" w-[90%] max-w-[500px] bg-gradient-to-r from-blue-900 to-blue-600 shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto">
+    <h2 className="text-2xl font-bold mb-4">Signup</h2>
+    <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="mb-4">
+            <label htmlFor="username" className="block text-gray-700">Username:</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleInputChange}
+                required
+                className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
+            />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
+            />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700">Password:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
+            />
         </div>
         {
-            loading?(<div>
-                Loading ...
-            </div>):(
-                <button type="submit">Signup</button>
+            loading ? (
+                <div className="text-center">
+                    Loading ...
+                </div>
+            ) : (
+                <button
+                    type="submit"
+                    className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Signup
+                </button>
             )
         }
-      <Link to={'/login'}>Login</Link>
-      </form>
-    </div>
+        <p className="mt-4 text-center">
+            Already have an account? <Link to="/login" className="text-white hover:underline">Login</Link>
+        </p>
+    </form>
+</div>
+
+ </div>
   );
 };
 
